@@ -1,0 +1,8 @@
+clear Lock
+keycode 66 = Mode_switch Caps_Lock
+keycode 31 = i I Up
+keycode 44 = j J Left
+keycode 45 = k K Down
+keycode 46 = l L Right
+keycode 30 = u U Page_Up
+keycode 32 = o O Page_Down
