@@ -7,9 +7,12 @@ call vundle#begin()
 "let g:airline_theme='<theme>' let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/goyo.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'ayu-theme/ayu-vim'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'itchyny/lightline.vim'
 
@@ -28,7 +31,18 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+
 set number			" enable line numbers
+
+
+"filetype plugin indent on
+"" show existing tab with 4 spaces width
+"set tabstop=4
+"" when indenting with '>', use 4 spaces width
+"set shiftwidth=4
+"" On pressing tab, insert 4 spaces
+"set expandtab
+
 
 " Enable the list of buffers
 "let g:airline#extensions#tabline#enabled = 1
@@ -54,6 +68,10 @@ set termguicolors	" enable true color (24 bit colors)
 
 let g:airline_theme='minimalist'
 colorscheme mortel
+let ayucolor = "light"
+"let ayucolor = "mirage"
+"let ayucolor = "dark"
+"colorscheme ayu
 " colorscheme VisualStudioDark
 " colorscheme deus
 " colorscheme vstudioDark
@@ -86,6 +104,8 @@ vnoremap y "*y
 vnoremap Y "*Y
 vnoremap p "*p
 vnoremap P "*P
+" easymotion map
+" map <Leader>f <Plug>(easymotion-prefix)
 
 " leader remap
 let mapleader=" "
@@ -97,13 +117,21 @@ nnoremap <C-e> <C-u>
 nnoremap <C-i> <C-u>
 nnoremap <C-k> <C-d>
 
+" Tab navigation like Firefox.
+" nnoremap <C-S-TAB> :tabprevious<CR>
+" nnoremap <C-TAB>   :tabnext<CR>
+" nnoremap <C-t>     :tabnew<CR>
+" inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+" inoremap <C-tab>   <Esc>:tabnext<CR>i
+" inoremap <C-t>     <Esc>:tabnew<CR>
+
 " remap hjkl to jklö 
 " noremap ö l
 " noremap l k
 " noremap k j
 " noremap j h
 
-" Make YouCompleteMe not behave idiotically
+" Make YouCompleteMe not behave autistically
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 let g:ycm_key_list_stop_completion = ['<C-y>', '<UP>', '<DOWN>']
@@ -131,7 +159,8 @@ nnoremap Ö :tabprevious<CR>
 nnoremap Ä :tabnext<CR>
 map ö :bprevious<CR>
 map ä :bnext<CR>
-map Å :buffers<CR>
+" map Å :buffers<CR>
+map Å :buffers<CR>:buffer<Space>
 nnoremap Q :bp\|bd #<CR>
 
 " hide buffers instead of closing 
