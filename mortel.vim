@@ -1,10 +1,10 @@
 "Clone of VisualStudioDark created by heorhiy
 set background=dark
 if version > 580
-	hi clear
-	if exists("syntax_on")
-		syntax reset
-	endif
+        hi clear
+        if exists("syntax_on")
+                syntax reset
+        endif
 endif
 
 set t_Co=256
@@ -14,7 +14,7 @@ let g:colors_name = "VisualStudioDark"
 "hi CTagsGlobalConstant -- no settings --
 "hi Ignore -- no settings --
 "hi Normal guifg=#c8c8c8 guibg=#192224 guisp=#192224 gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
-hi Normal guifg=#c9c6c9 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
+hi Normal guifg=#e9e6e9 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 "hi CTagsImport -- no settings --
 "hi CTagsGlobalVariable -- no settings --
 "hi EnumerationValue -- no settings --
@@ -55,7 +55,7 @@ hi Search guifg=#192224 guibg=#BD9800 guisp=#BD9800 gui=NONE ctermfg=235 ctermbg
 hi Delimiter guifg=#569cd6 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Statement guifg=#569cd6 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi SpellRare guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
-hi Comment guifg=#608b4e guibg=NONE guisp=NONE gui=italic ctermfg=65 ctermbg=NONE cterm=NONE
+hi Comment guifg=#80Ab6e guibg=NONE guisp=NONE gui=italic ctermfg=65 ctermbg=NONE cterm=NONE
 hi Character guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 hi Float guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 hi Number guifg=#b5cea8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
