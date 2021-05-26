@@ -89,6 +89,9 @@ map ä :bnext<CR>
 map Å :buffers<CR>:buffer<Space>
 nnoremap Q :bp\|bd #<CR>
 
+" comma to get a shell
+map , :sh<CR>
+
 " hide buffers instead of closing 
 set hidden
 
