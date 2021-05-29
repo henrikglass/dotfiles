@@ -89,6 +89,26 @@ map ä :bnext<CR>
 map Å :buffers<CR>:buffer<Space>
 nnoremap Q :bp\|bd #<CR>
 
+" page keys to walk a 6th of a page
+function! ScrollChunk(move)
+    let height=winheight(0)
+
+    if a:move == 'up'
+        let key="\<C-Y>"
+    else
+        let key="\<C-E>"
+    endif
+
+    execute 'normal! ' . height/6 . key 
+endfunction
+
+nnoremap <PageUp> :call ScrollChunk('up')<CR>
+nnoremap <PageDown> :call ScrollChunk('down')<CR>
+
+" search current keyword with tab
+nnoremap <Tab> *
+nnoremap <S-Tab> N
+
 " comma to get a shell
 map , :sh<CR>
 
