@@ -112,6 +112,10 @@ nnoremap <S-Tab> N
 " comma to get a shell
 map , :sh<CR>
 
+" remap right and left arrow keys to move by word (w, b)
+nnoremap <Left> b
+nnoremap <Right> w
+
 " hide buffers instead of closing 
 set hidden
 
