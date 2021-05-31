@@ -115,6 +115,10 @@ map , :sh<CR>
 " remap right and left arrow keys to move by word (w, b)
 nnoremap <Left> b
 nnoremap <Right> w
+nnoremap j h
+
+" toggle paste mode
+set pastetoggle=<F10>
 
 " hide buffers instead of closing 
 set hidden
