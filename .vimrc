@@ -116,6 +116,9 @@ map , :sh<CR>
 nnoremap <Left> b
 nnoremap <Right> w
 nnoremap j h
+vnoremap <Left> b
+vnoremap <Right> e
+vnoremap j h
 
 " toggle paste mode
 set pastetoggle=<F10>
