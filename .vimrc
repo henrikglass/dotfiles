@@ -84,7 +84,7 @@ nnoremap <C-k> <C-d>
 nnoremap <C-d> *Ncgn
 
 " remap tab switching, buffer switching and split focus
-map åå <C-W><C-W>
+map å <C-W><C-W>
 map ö :bprevious<CR>
 map ä :bnext<CR>
 " map Å :buffers<CR>
