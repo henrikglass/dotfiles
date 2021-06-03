@@ -112,6 +112,20 @@ nnoremap <S-Tab> N
 " comma to get a shell
 map , :sh<CR>
 
+" remap right and left arrow keys to move by word (w, b). I'm sorry vim enthusiasts
+nnoremap j h
+nnoremap h j
+ " basically the same as nnoremap <Right> w but stays within the line
+nnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'w' : '$'
+nnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
+vnoremap j h
+vnoremap h j
+vnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
+vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
+
+" center after G
+nnoremap G Gzz
+
 " remap right and left arrow keys to move by word (w, b)
 nnoremap <Left> b
 nnoremap <Right> w
