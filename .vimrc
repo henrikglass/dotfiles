@@ -11,6 +11,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ycm-core/YouCompleteMe'
 
@@ -72,6 +73,9 @@ let mapleader=" "
 " remap so C-d goes down half a page while C-e goes up half a page
 "nnoremap <C-e> <C-u>
 
+" remap ctrl-p plugin shortcut
+let g:ctrlp_map = 'Ö'
+
 " remap so C-k goes down half a page while C-i goes up half a page
 nnoremap <C-i> <C-u>
 nnoremap <C-k> <C-d>
@@ -81,8 +85,6 @@ nnoremap <C-d> *Ncgn
 
 " remap tab switching, buffer switching and split focus
 map åå <C-W><C-W>
-nnoremap Ö :tabprevious<CR>
-nnoremap Ä :tabnext<CR>
 map ö :bprevious<CR>
 map ä :bnext<CR>
 " map Å :buffers<CR>
