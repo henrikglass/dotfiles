@@ -128,13 +128,8 @@ vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 " center after G
 nnoremap G Gzz
 
-" remap right and left arrow keys to move by word (w, b)
-nnoremap <Left> b
-nnoremap <Right> w
-nnoremap j h
-vnoremap <Left> b
-vnoremap <Right> e
-vnoremap j h
+" Paste at end of line with space
+nnoremap P A <esc>p
 
 " toggle paste mode
 set pastetoggle=<F10>
