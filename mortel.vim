@@ -8,7 +8,7 @@ if version > 580
 endif
 
 set t_Co=256
-let g:colors_name = "VisualStudioDark"
+let g:colors_name = "mortel"
 
 "hi CTagsMember -- no settings --
 "hi CTagsGlobalConstant -- no settings --
