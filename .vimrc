@@ -11,9 +11,19 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
+
+" requires fzf on system I think? Required ripgrep for :Rg I think also?
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
+" Just NerdTree
 Plugin 'scrooloose/nerdtree'
-Plugin 'ycm-core/YouCompleteMe'
+
+" requires nodejs (see readme) and a language server. Sorta meh
+"Plugin 'neoclide/coc.nvim'
+
+" I used this before. Sorta pain to set up?
+"Plugin 'ycm-core/YouCompleteMe
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,43 +63,53 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " custom keybinds & editor behaviour
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" enable mouse in normal mode (not GVIM)
+set mouse=n
+
+" TODO make this follow tags or something useful (does this by default?)
+" nnoremap <C-LeftMouse> i
+
 set timeoutlen=1000 ttimeoutlen=0 " fix delay after esc
 "set colorcolumn=80 " set right margin marker
 set nowrap " disable line wrapping
 
 " remove yank on delete
-nnoremap y "*y
-nnoremap Y "*Y
-nnoremap p "*p
-nnoremap P "*P
-vnoremap y "*y
-vnoremap Y "*Y
-vnoremap p "*p
-vnoremap P "*P
+" nnoremap y "*y
+" nnoremap Y "*Y
+" nnoremap p "*p
+" nnoremap P "*P
+" vnoremap y "*y
+" vnoremap Y "*Y
+" vnoremap p "*p
+" vnoremap P "*P
 
 " leader remap
 let mapleader=" "
 
-" remap so C-d goes down half a page while C-e goes up half a page
-"nnoremap <C-e> <C-u>
+" capital P pastes to end of line with space
+nnoremap P A <esc>p
 
-" remap ctrl-p plugin shortcut
-let g:ctrlp_map = 'Ö'
-
-" remap so C-k goes down half a page while C-i goes up half a page
-nnoremap <C-i> <C-u>
-nnoremap <C-k> <C-d>
+" go to definition (ctags)
+nnoremap <C-f> g<C-]>
 
 " visual studio style 'next occurance' selection
 nnoremap <C-d> *Ncgn
 
 " remap tab switching, buffer switching and split focus
-map å <C-W><C-W>
+map åå <C-W><C-W>
 map ö :bprevious<CR>
 map ä :bnext<CR>
-" map Å :buffers<CR>
+
+" We can also use fzf for this but nah
 map Å :buffers<CR>:buffer<Space>
+
+" Close buffer on Q
 nnoremap Q :bp\|bd #<CR>
+
+" remap FZF plugin shortcut
+nnoremap Ö :FZF<CR>
+nnoremap Ä :Rg <C-r><C-w><CR>
 
 " page keys to walk a 6th of a page
 function! ScrollChunk(move)
@@ -107,9 +127,13 @@ endfunction
 nnoremap <PageUp> :call ScrollChunk('up')<CR>
 nnoremap <PageDown> :call ScrollChunk('down')<CR>
 
-" search current keyword with tab
-nnoremap <Tab> *
-nnoremap <S-Tab> N
+" search current keyword with tab (does not work well with the jumplist for some reason)
+" nnoremap <Tab> *
+" nnoremap <S-Tab> N
+
+" replace all instances of word under cursor or selection.
+nnoremap <Leader><Tab> *:%s///g<Left><Left>
+vnoremap <Leader><Tab> "hy:%s/<C-r>h//g<left><left>
 
 " comma to get a shell
 map , :sh<CR>
@@ -117,19 +141,20 @@ map , :sh<CR>
 " remap right and left arrow keys to move by word (w, b). I'm sorry vim enthusiasts
 nnoremap j h
 nnoremap h j
- " basically the same as nnoremap <Right> w but stays within the line
-nnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'w' : '$'
-nnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
+" The two lines below `<Right> w` and `<Left> b` are the same but attempts to stay within the line
+nnoremap <Right> w
+nnoremap <Left> b
+"nnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'w' : '$'
+"nnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 vnoremap j h
 vnoremap h j
-vnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
-vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
+nnoremap <Right> w
+nnoremap <Left> b
+"vnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
+"vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 
 " center after G
 nnoremap G Gzz
-
-" Paste at end of line with space
-nnoremap P A <esc>p
 
 " toggle paste mode
 set pastetoggle=<F10>
