@@ -90,8 +90,11 @@ let mapleader=" "
 " capital P pastes to end of line with space
 nnoremap P A <esc>p
 
-" go to definition (ctags)
-nnoremap <C-f> g<C-]>
+" go to definition (ctags) and center
+nnoremap <C-f> g<C-]>zz
+
+" center cursor when jumping back
+nnoremap <C-o> <C-o>zz
 
 " visual studio style 'next occurance' selection
 nnoremap <C-d> *Ncgn
