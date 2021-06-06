@@ -93,8 +93,9 @@ nnoremap P A <esc>p
 " go to definition (ctags) and center
 nnoremap <C-f> g<C-]>zz
 
-" center cursor when jumping back
+" center cursor when jumping forwards or backwards in jumplist
 nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
 
 " visual studio style 'next occurance' selection
 nnoremap <C-d> *Ncgn
