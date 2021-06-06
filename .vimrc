@@ -12,9 +12,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" requires fzf on system I think? Required ripgrep for :Rg I think also?
+" requires fzf on system I think? Requires ripgrep for :Rg I think also?
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+
+" I never use this but it looks cool
+Plugin 'junegunn/goyo.vim'
 
 " Just NerdTree
 Plugin 'scrooloose/nerdtree'
