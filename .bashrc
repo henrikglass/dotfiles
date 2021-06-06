@@ -155,3 +155,6 @@ fi
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# custom prompt look
+PS1="[\u@\e[0;33m\h \e[0;0m] \w \e[0;32mλ\e[0;0m "
