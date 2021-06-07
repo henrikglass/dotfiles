@@ -189,6 +189,9 @@ let NERDTreeSortOrder=['\/$', '[[extension]]']
 " Autocomplete stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" always hide preview window
+set completeopt-=preview
+
 " clang_complete (C/C++) (requires libclang)
 let g:clang_library_path='/usr/lib/llvm-10/lib'
 
@@ -197,6 +200,5 @@ let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " old YCM settings in case I use it again
-"set completeopt-=preview
 "let g:ycm_enable_diagnostic_signs = 0 " default 1 - removes gutter warnings
 "let g:ycm_show_diagnostics_ui = 0 " default 1 - removes weird syntax highlighting
