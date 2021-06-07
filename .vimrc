@@ -22,15 +22,23 @@ Plugin 'junegunn/goyo.vim'
 " Just NerdTree
 Plugin 'scrooloose/nerdtree'
 
-" requires nodejs (see readme) and a language server. Sorta meh
-"Plugin 'neoclide/coc.nvim'
+" completion
 
-" I used this before. Sorta pain to set up?
-"Plugin 'ycm-core/YouCompleteMe
+" tab -> <C-x><C-o>
+Plugin 'ackyshake/VimCompletesMe'
+
+" requires libclang
+Plugin 'xavierd/clang_complete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" misc.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fixes problem where vim starts in replace mode
+set t_u7=
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " style
@@ -180,6 +188,15 @@ let NERDTreeSortOrder=['\/$', '[[extension]]']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set completeopt-=preview
-let g:ycm_enable_diagnostic_signs = 0 " default 1 - removes gutter warnings
-let g:ycm_show_diagnostics_ui = 0 " default 1 - removes weird syntax highlighting
+
+" clang_complete (C/C++) (requires libclang)
+let g:clang_library_path='/usr/lib/llvm-10/lib'
+
+" merlin (ocaml) (can be installed via opam)
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
+" old YCM settings in case I use it again
+"set completeopt-=preview
+"let g:ycm_enable_diagnostic_signs = 0 " default 1 - removes gutter warnings
+"let g:ycm_show_diagnostics_ui = 0 " default 1 - removes weird syntax highlighting
