@@ -159,5 +159,8 @@ export PATH="$PATH:/opt/mssql-tools/bin"
 # alias e to vim
 alias e='vim'
 
+# ls -> ls -CF                                                                  
+alias ls='ls --color=auto -F'
+
 # custom prompt look
 PS1="[\u@\e[0;32m\h \e[0;0m] \w \e[0;32mλ\e[0;0m "
