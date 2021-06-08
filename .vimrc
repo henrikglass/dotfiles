@@ -174,6 +174,7 @@ nnoremap j h
 nnoremap h j
 nnoremap <silent> <Right> :call Rw()<CR>
 nnoremap <silent> <Left> :call Lb()<CR>
+"nnoremap <expr> <Right> col('.') == (col('$') - 1) \|\| getline('.')[col('.')-1:] =~# '^\S\+$' ? '$' : 'w'
 vnoremap j h
 vnoremap h j
 vnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
