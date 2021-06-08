@@ -153,20 +153,31 @@ vnoremap <Leader><Tab> "hy:%s/<C-r>h//g<left><left>
 " comma to get a shell
 map , :sh<CR>
 
-" remap right and left arrow keys to move by word (w, b). I'm sorry vim enthusiasts
+" Switch `j` and `h`, Remap left and right arrow keys to move by word staying within the line
+function! Rw()
+    let last = line('.')
+    norm w
+    if line('.') != last
+        norm b$
+    endif
+endfunction
+
+function! Lb()
+    let last = line('.')
+    norm b
+    if line('.') != last
+        norm w
+    endif
+endfunction
+
 nnoremap j h
 nnoremap h j
-" The two lines below `<Right> w` and `<Left> b` are the same but attempts to stay within the line
-nnoremap <Right> w
-nnoremap <Left> b
-"nnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'w' : '$'
-"nnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
+nnoremap <silent> <Right> :call Rw()<CR>
+nnoremap <silent> <Left> :call Lb()<CR>
 vnoremap j h
 vnoremap h j
-nnoremap <Right> w
-nnoremap <Left> b
-"vnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
-"vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
+vnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
+vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 
 " center after G
 nnoremap G Gzz
