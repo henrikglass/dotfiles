@@ -22,6 +22,9 @@ Plugin 'junegunn/goyo.vim'
 " Just NerdTree
 Plugin 'scrooloose/nerdtree'
 
+" generic select inside
+Plugin 'gcmt/wildfire.vim'
+
 " completion
 
 " tab -> <C-x><C-o>
