@@ -31,7 +31,7 @@ Plugin 'gcmt/wildfire.vim'
 Plugin 'ackyshake/VimCompletesMe'
 
 " requires libclang
-Plugin 'xavierd/clang_complete'
+"Plugin 'xavierd/clang_complete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -114,6 +114,9 @@ nnoremap <C-f> g<C-]>zz
 " center cursor when jumping forwards or backwards in jumplist
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
+
+" Don't move to next occurance with *
+nnoremap * *Nzz
 
 " visual studio style 'next occurance' selection
 nnoremap <C-d> *Ncgn
