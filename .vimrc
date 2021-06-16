@@ -88,7 +88,11 @@ set timeoutlen=1000 ttimeoutlen=0 " fix delay after esc
 "set colorcolumn=80 " set right margin marker
 set nowrap " disable line wrapping
 
-" remove yank on delete
+" remove yank on delete (Works? Preferrable)
+nnoremap d "_d
+xnoremap d "_d
+xnoremap p "_dP
+" remove yank on delete (Works in some places)
 " nnoremap y "*y
 " nnoremap Y "*Y
 " nnoremap p "*p
@@ -155,6 +159,12 @@ vnoremap <Leader><Tab> "hy:%s/<C-r>h//g<left><left>
 
 " comma to get a shell
 map , :sh<CR>
+
+" key seqs for CTRL-Arrow. At least on defaul cygwin. 
+map <ESC>[5D <C-Left>
+map <ESC>[5C <C-Right>
+map! <ESC>[5D <C-Left>
+map! <ESC>[5C <C-Right>
 
 " Switch `j` and `h`, Remap left and right arrow keys to move by word staying within the line
 function! Rw()
