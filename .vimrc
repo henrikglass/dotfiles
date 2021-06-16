@@ -163,11 +163,11 @@ vnoremap <Leader><Tab> "hy:%s/<C-r>h//g<left><left>
 " comma to get a shell
 map , :sh<CR>
 
-" key seqs for CTRL-Arrow. At least on defaul cygwin. 
-map <ESC>[5D <C-Left>
-map <ESC>[5C <C-Right>
-map! <ESC>[5D <C-Left>
-map! <ESC>[5C <C-Right>
+" key seqs for CTRL-Arrow. At least on defaul cygwin. (not compatible with ttimeoutlen=0 ? )
+"map <ESC>[5D <C-Left>
+"map <ESC>[5C <C-Right>
+"map! <ESC>[5D <C-Left>
+"map! <ESC>[5C <C-Right>
 
 " Switch `j` and `h`, Remap left and right arrow keys to move by word staying within the line
 function! Rw()
