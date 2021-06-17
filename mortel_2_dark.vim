@@ -53,7 +53,7 @@ hi Structure guifg=#b99d80 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NON
 hi Macro guifg=#b99d80 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi MatchParen guifg=#b99d80 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Repeat guifg=#b99d80 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
-hi NERDTreeDir guifg=#b99d80 guibg=#1e1e1e gui=NONE
+"hi NERDTreeDir guifg=#b99d80 guibg=#1e1e1e gui=NONE
 
 
 hi IncSearch guifg=#192224 guibg=#BD9800 guisp=#BD9800 gui=NONE ctermfg=235 ctermbg=1 cterm=NONE
