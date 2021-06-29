@@ -48,7 +48,7 @@ colorscheme mortel  " vscode style color scheme
 set number          " line numbers
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tabs
+" Indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
@@ -132,7 +132,7 @@ nnoremap Q :bp\|bd #<CR>
 
 " remap FZF plugin shortcut
 nnoremap Ö :FZF<CR>
-nnoremap Ä :Rg <C-r><C-w><CR>
+nnoremap Ä :TagbarToggle<CR>åå
 
 " page keys to walk a 6th of a page
 function! ScrollChunk(move)
@@ -204,9 +204,6 @@ command! W :w
 " tab to autocomplete
 inoremap <Tab> <C-n>
 
-# tagbar toggle on enter
-let g:tagbar_map_togglefold = "<Enter>"
-
 " toggle paste mode
 set pastetoggle=<F10>
 
@@ -216,17 +213,16 @@ set hidden
 " automatically reload/refresh files when they are changed
 set autoread
 
-" wildfire (generic select inside) objects
-let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDtree stuff
+" Plugin Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeSortOrder=['\/$', '[[extension]]']
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocomplete stuff
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:tagbar_no_autocmds = 1
+let g:tagbar_autoclose = 1 
+
+" wildfire (generic select inside) objects
+let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
 
 " always hide preview window
 set completeopt-=preview
