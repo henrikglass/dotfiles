@@ -220,8 +220,7 @@ set autoread
 let NERDTreeSortOrder=['\/$', '[[extension]]']
 
 "let g:tagbar_no_autocmds = 1
-let g:tagbar_autoclose = 1 
-let g:tagbar_map_close = "<esc>"
+let g:tagbar_autoclose = 1
 
 " wildfire (generic select inside) objects
 let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
