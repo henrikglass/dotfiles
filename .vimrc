@@ -22,13 +22,11 @@ Plugin 'junegunn/goyo.vim'
 " Just NerdTree
 Plugin 'scrooloose/nerdtree'
 
+" Tagbar
+Plugin 'preservim/tagbar'
+
 " generic select inside
 Plugin 'gcmt/wildfire.vim'
-
-" completion
-
-" tab -> <C-x><C-o>
-Plugin 'ackyshake/VimCompletesMe'
 
 " requires libclang
 "Plugin 'xavierd/clang_complete'
@@ -199,6 +197,15 @@ vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 
 " center after G
 nnoremap G Gzz
+
+" :W same as :w
+command! W :w
+
+" tab to autocomplete
+inoremap <Tab> <C-n>
+
+# tagbar toggle on enter
+let g:tagbar_map_togglefold = "<Enter>"
 
 " toggle paste mode
 set pastetoggle=<F10>
