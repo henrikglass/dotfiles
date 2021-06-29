@@ -202,7 +202,7 @@ nnoremap G Gzz
 command! W :w
 
 " tab to autocomplete
-inoremap <Tab> <C-n>
+inoremap <expr> <Tab> getline('.')[col('.')-2] =~# '\S' ? '<C-n>' : '<Tab>'
 
 " toggle paste mode
 set pastetoggle=<F10>
