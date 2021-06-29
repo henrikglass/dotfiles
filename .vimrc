@@ -216,6 +216,9 @@ set hidden
 " automatically reload/refresh files when they are changed
 set autoread
 
+" wildfire (generic select inside) objects
+let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDtree stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
