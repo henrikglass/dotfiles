@@ -132,7 +132,7 @@ map Å :buffers<CR>:buffer<Space>
 nnoremap Q :bp\|bd #<CR>
 
 " remap FZF plugin shortcut
-nnoremap Ö :FZF<CR>
+" nnoremap Ö :FZF<CR>
 nnoremap Ä :TagbarToggle<CR>åå
 
 " page keys to walk a 6th of a page
@@ -214,9 +214,23 @@ set hidden
 " automatically reload/refresh files when they are changed
 set autoread
 
+" ctrl up & down arrows move by paragraph
+nnoremap <C-Up> {
+nnoremap <C-Down> }
+vnoremap <C-Up> {
+vnoremap <C-Down> }
+
+" Netrw 
+nnoremap Ö :Explore<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 0 
+let g:netrw_browse_split = 0
+
 let NERDTreeSortOrder=['\/$', '[[extension]]']
 
 "let g:tagbar_no_autocmds = 1
