@@ -189,12 +189,16 @@ nnoremap j h
 nnoremap h j
 nnoremap <silent> <Right> :call Rw()<CR>
 nnoremap <silent> <Left> :call Lb()<CR>
+nnoremap <silent> <C-Right> :call Rw()<CR>
+nnoremap <silent> <C-Left> :call Lb()<CR>
 "nnoremap <expr> <Right> col('.') == (col('$') - 1) \|\| getline('.')[col('.')-1:] =~# '^\S\+$' ? '$' : 'w'
 "nnoremap <expr> <Right> col('.') == (col('$') - 1) \|\| getline('.')[col('.')-1:] =~# '^[^[:keyword:]]\+$\\|^\k\+$' ? '$' : 'w'
 vnoremap j h
 vnoremap h j
 vnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
 vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
+vnoremap <expr> <C-Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
+vnoremap <expr> <C-Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 
 " center after G
 nnoremap G Gzz
@@ -215,10 +219,10 @@ set hidden
 set autoread
 
 " ctrl up & down arrows move by paragraph
-nnoremap <C-Up> {
-nnoremap <C-Down> }
-vnoremap <C-Up> {
-vnoremap <C-Down> }
+" nnoremap <C-Up> {
+" nnoremap <C-Down> }
+" vnoremap <C-Up> {
+" vnoremap <C-Down> }
 
 " Netrw 
 nnoremap Ö :Explore<CR>
