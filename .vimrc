@@ -46,6 +46,8 @@ set t_u7=
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme mortel  " vscode style color scheme
 set number          " line numbers
+set hlsearch
+set cursorline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentation
