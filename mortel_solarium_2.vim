@@ -79,7 +79,7 @@ hi Search guifg=#1e1e1e guibg=#ff4349 guisp=#ff4349 gui=NONE ctermfg=235 ctermbg
 hi SpellRare guifg=#F9F9FF guibg=#1e1e1e guisp=#1e1e1e gui=underline ctermfg=189 ctermbg=235 cterm=underline
 
 hi CursorLine guifg=NONE guibg=#353535 guisp=#292929 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
-hi CursorLineNr guifg=#f5c76c guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
+hi CursorLineNr guifg=#536991 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 " hi TabLineFill guifg=#1e1e1e guibg=#5E6C70 guisp=#5E6C70 gui=NONE ctermfg=235 ctermbg=66 cterm=NONE
 hi WarningMsg guifg=#80f0e0 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
 hi VisualNOS guifg=#1e1e1e guibg=#F9F9FF guisp=#F9F9FF gui=underline ctermfg=235 ctermbg=189 cterm=underline
