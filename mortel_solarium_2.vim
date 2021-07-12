@@ -14,8 +14,8 @@ let g:colors_name = "mortel_solarium_2"
 "hi Ignore -- no settings --
 "hi Normal guifg=#c8c8c8 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 hi Normal guifg=#d0c0a0 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
-hi LineNr guifg=#a0a0a0 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
-hi Comment guifg=#a0a0a0 guibg=NONE guisp=NONE gui=italic ctermfg=65 ctermbg=NONE cterm=NONE
+hi LineNr guifg=#d0c0a0 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
+hi Comment guifg=#909090 guibg=NONE guisp=NONE gui=italic ctermfg=65 ctermbg=NONE cterm=NONE
 hi TabLineFill guifg=#c9c6c9 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 hi TabLine guifg=#c9c6c9 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 hi TabLineSel guifg=#1e1e1e guibg=#d5d5d5 guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
