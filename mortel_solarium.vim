@@ -33,7 +33,7 @@ hi Function guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE
 
 hi SpecialComment guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Typedef guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
-hi PreCondit guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
+hi PreCondit guifg=#d75f5f guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Include guifg=#d75f5f guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Debug guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Identifier guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
