@@ -156,6 +156,9 @@ export PATH="$PATH:/opt/mssql-tools/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export VISUAL=vim;
+export EDITOR=vim;
+
 # alias e to vim
 alias e='vim'
 
