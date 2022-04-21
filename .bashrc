@@ -165,5 +165,21 @@ alias e='vim'
 # ls -> ls -CF                                                                  
 alias ls='ls --color=auto -F -h --group-directories-first'
 
+PROMPT_COMMAND=__prompt_command    # Function to generate PS1 after CMDs
+
 # custom prompt look
-PS1="[\u@\[\e[0;32m\]\h\[\e[0;0m]\] \w \[\e[0;32m\]λ \[\e[0;0m\]"
+__prompt_command() {
+    local EXIT="$?"                # This needs to be first
+
+    local r='\[\e[0;31m\]'
+    local g='\[\e[0;32m\]'
+    local n='\[\e[0;0m\]'
+
+    PS1="[\u@${g}\h${n}]"
+
+    if [ $EXIT != 0 ]; then
+        PS1+=" \w ${r}λ ${n}"
+    else
+        PS1+=" \w ${g}λ ${n}"
+    fi
+}
