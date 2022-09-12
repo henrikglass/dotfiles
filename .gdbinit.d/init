@@ -1,0 +1,10 @@
+set breakpoint pending on
+set confirm off
+set disassembly-flavor intel
+dashboard registers -style column-major True
+dashboard assembly
+dashboard registers
+dashboard history
+dashboard source
+dashboard stack
+dashboard threads
