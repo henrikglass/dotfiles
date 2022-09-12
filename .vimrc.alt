@@ -275,3 +275,10 @@ set completeopt-=preview
 setglobal complete-=i
 "let g:ycm_enable_diagnostic_signs = 0 " default 1 - removes gutter warnings
 "let g:ycm_show_diagnostics_ui = 0 " default 1 - removes weird syntax highlighting
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Termdebug/gdb stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+packadd termdebug
+let g:termdebug_wide=1
+nnoremap <F6> :Termdebug<CR><C-w>l:vertical resize +20<CR>:resize +30<CR>
