@@ -165,6 +165,9 @@ alias e='vim'
 # ls -> ls -CF                                                                  
 alias ls='ls --color=auto -F -h --group-directories-first'
 
+# l -> ls -alh
+alias l='ls -alh'
+
 PROMPT_COMMAND=__prompt_command    # Function to generate PS1 after CMDs
 
 # custom prompt look
