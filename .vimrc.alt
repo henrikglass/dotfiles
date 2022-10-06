@@ -261,6 +261,7 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
 " NERDtree stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeSortOrder=['\/$', '[[extension]]']
+let NERDTreeShowHidden=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete stuff
