@@ -257,6 +257,10 @@ set autoread
 " wildfire (generic select inside) objects
 let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
 
+" highlight trailing whitespaces
+highlight RedundantSpaces ctermbg=red guibg=red 
+match RedundantSpaces /\s\+$/
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDtree stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
