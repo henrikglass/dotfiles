@@ -10,21 +10,15 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'SirVer/ultisnips'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'preservim/tagbar'
-
 Plugin 'ap/vim-css-color'
-
 Plugin 'junegunn/goyo.vim'
-
 Plugin 'scrooloose/nerdtree'
 Plugin 'gcmt/wildfire.vim'
-"Plugin 'ackyshake/VimCompletesMe'
-
-"Plugin 'ycm-core/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -261,6 +255,16 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
 " highlight RedundantSpaces ctermbg=red guibg=red 
 " match RedundantSpaces /\s\+$/
 nnoremap <F2> :/\s\+$<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UltiSnips stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<CR>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir = "~/.vim/snippets"
+let g:UltiSnipsListSnippets="<F3>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDtree stuff
