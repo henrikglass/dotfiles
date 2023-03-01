@@ -23,9 +23,9 @@ WFLAGS                  =       -Werror -Wall -Wpedantic -Wextra -Wvla -Wnull-de
                                         -Wswitch-enum -Wno-deprecated -Wduplicated-cond \
                                         -Wduplicated-branches -Wshadow -Wpointer-arith -Wcast-qual \
                                         -Winit-self -Wuninitialized -Wcast-align -Wstrict-aliasing \
-                                        -Wformat=2 -Wmissing-declarations -Wmissing-include-dirs \
-                                        -Wmissing-prototypes -Wstrict-prototypes -Wwrite-strings \
-                                        -Wunused-parameter -Wno-error=cpp
+                                        -Wformat=2 -Wmissing-declarations -Wmissing-prototypes \
+                                        -Wstrict-prototypes -Wwrite-strings -Wunused-parameter \
+                                        -Wno-error=cpp
 CFLAGS  = -O2 -std=c11 $(WFLAGS) -fPIC -Iinclude
 
 CPPCHECKFLAGS   =       --max-ctu-depth=3 --enable=all --inline-suppr --suppress=variableScope \
