@@ -19,20 +19,33 @@ INCLUDES        := $(wildcard $(SRCDIR)/*.h)
 MAKEFLAGS += --jobs $(shell nproc)
 
 # gcc flags
-WFLAGS  = -Werror -Wall -Wpedantic -Wextra -Wvla -Wnull-dereference \
-                  -Wswitch-enum -Wno-deprecated -Wduplicated-cond -Wduplicated-branches \
-                  -Wno-error=cpp
+WFLAGS                  =       -Werror -Wall -Wpedantic -Wextra -Wvla -Wnull-dereference \
+                                        -Wswitch-enum -Wno-deprecated -Wduplicated-cond \
+                                        -Wduplicated-branches -Wshadow -Wpointer-arith -Wcast-qual \
+                                        -Winit-self -Wuninitialized -Wcast-align -Wstrict-aliasing \
+                                        -Wformat=2 -Wmissing-declarations -Wmissing-include-dirs \
+                                        -Wmissing-prototypes -Wstrict-prototypes -Wwrite-strings \
+                                        -Wunused-parameter -Wno-error=cpp
 CFLAGS  = -O2 -std=c11 $(WFLAGS) -fPIC -Iinclude
 
-.PHONY: all prep clean
+CPPCHECKFLAGS   =       --max-ctu-depth=3 --enable=all --inline-suppr --suppress=variableScope \
+                                        --suppress=missingInclude --suppress=missingIncludeSystem \
+                                        --suppress=unmatchedSuppression --suppress=unusedFunction --std=c11 \
+                                        --error-exitcode=666
+CLANGTIDYFLAGS  =       -checks=bugprone-*,cert-*,cppcoreguidelines-*,-cppcoreguidelines-avoid-non-const-global-variables,$\
+                                        -cppcoreguidelines-avoid-magic-numbers,-cppcoreguidelines-init-variables,clang-analyzer-*,google-*,$\
+                                        -google-readability-*,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling \
+                                        --warnings-as-errors=*
+
+.PHONY: all prep clean static-analysis
 
 ###############################################################################
 # Platform specific configuration
 ###############################################################################
 ifeq ($(TARGET_PREFIX), powerpc64-sonett-linux-)
-  TODO
+TODO
 else
-  TODO
+TODO
 endif
 
 ###############################################################################
@@ -88,6 +101,11 @@ $(DBG_OBJDIR):
 #
 # Other rules
 #
+static-analysis:
+        cppcheck $(CPPCHECKFLAGS) $(SOURCES) $(INCLUDES)
+        clang-tidy $(CLANGTIDYFLAGS) $(SOURCES) $(INCLUDES) \
+                           -- $(CFLAGS) -Wno-unknown-warning-option
+
 prep:
         mkdir -p $(DBG_OBJDIR)
         mkdir -p $(DBG_BINDIR)
