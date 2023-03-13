@@ -10,14 +10,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'SirVer/ultisnips'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'preservim/tagbar'
-Plugin 'ap/vim-css-color'
-Plugin 'junegunn/goyo.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'gcmt/wildfire.vim'
 
 " All of your Plugins must be added before the following line
@@ -29,10 +24,7 @@ filetype indent off
 " style
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color schemes
-"colorscheme mortel              " vscode style color scheme
-colorscheme mortel_solarium      " jblow-ish color scheme
-"colorscheme mortel_2_light      " custom light color scheme
-"colorscheme mortel_2_sunglasses " custom easy-on-the-eyes color schemes
+colorscheme mortel_solarium
 
 set termguicolors   " enable true color (24 bit colors)
 set number          " line numbers
@@ -175,8 +167,12 @@ vnoremap <Leader><Tab> "hy:%s/<C-r>h//g<left><left>
 " comma to get a shell
 map , :sh<CR>
 
+" treat underscore as word delimiter
+set iskeyword-=_
+
 " remap right and left arrow keys to move by word (w, b). I'm sorry vim enthusiasts
 " Switch `j` and `h`, Remap left and right arrow keys to move by word staying within the line
+
 function! Rw()
     let last = line('.')
     norm w
@@ -267,10 +263,12 @@ let g:UltiSnipsSnippetsDir = "~/.vim/snippets"
 let g:UltiSnipsListSnippets="<F3>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDtree stuff
+" netrw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let NERDTreeSortOrder=['\/$', '[[extension]]']
-let NERDTreeShowHidden=1
+let g:netrw_sort_sequence = ''
+let g:netrw_fastbrowse = 0
+let g:netrw_banner = 0
+let g:netrw_liststyle = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete stuff
