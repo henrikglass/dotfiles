@@ -12,7 +12,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'gcmt/wildfire.vim'
-Plug 'chaoren/vim-wordmotion'
+Plug 'bkad/CamelCaseMotion'
 Plug 'ap/vim-css-color'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/tagbar'
@@ -31,7 +31,7 @@ colorscheme mortel_solarium
 
 set termguicolors   " enable true color (24 bit colors)
 set number          " line numbers
-set t_ut=           " Fixes bug causubg background not to be redrawn
+set t_ut=           " Fixes bug causing background not to be redrawn
 set hlsearch        " highlight search results
 
 " remove hl when done searching on screen refresh
@@ -142,41 +142,16 @@ nnoremap <PageDown> :call ScrollChunk('down')<CR>
 
 set scrolloff=5
 
-" Make next searched word appear near center
-" function! CenteredFindNext(forward)
-"     " save the current value for later restore
-"     let s:so_curr=&scrolloff
-"     set scrolloff=20
-"     try
-"         if a:forward
-"             silent normal! n
-"         else
-"             silent normal! N
-"         endif
-"     finally
-"         " restore no matter what
-"         let &scrolloff=s:so_curr
-"     endtry
-" endfunction
-" nnoremap <silent>n :call CenteredFindNext(1)<CR>
-" nnoremap <silent>N :call CenteredFindNext(0)<CR>
-
-" search current keyword with tab
-"nnoremap <Tab> *
-"nnoremap <S-Tab> N
-
 " replace all instances of word under cursor or selection.
 nnoremap <Leader><Tab> *:%s///g<Left><Left>
 vnoremap <Leader><Tab> "hy:%s/<C-r>h//g<left><left>
-
-" comma to get a shell
-map , :sh<CR>
 
 " remap right and left arrow keys to move by word (w, b). I'm sorry vim enthusiasts
 " Switch `j` and `h`, Remap left and right arrow keys to move by word staying within the line
 function! Rw()
     let last = line('.')
-    norm w
+    "norm w
+    exec "norm \<Plug>CamelCaseMotion_w"
     if line('.') != last
         norm b$
     endif
@@ -184,7 +159,8 @@ endfunction
 
 function! Re()
     let last = line('.')
-    norm e
+    "norm e
+    exec "norm \<Plug>CamelCaseMotion_e"
     if line('.') != last
         norm b$
     endif
@@ -192,7 +168,8 @@ endfunction
 
 function! Lb()
     let last = line('.')
-    norm b
+    "norm b
+    exec "norm \<Plug>CamelCaseMotion_b"
     if line('.') != last
         norm w
     endif
@@ -212,10 +189,6 @@ vnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
 vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 vnoremap <expr> <C-Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
 vnoremap <expr> <C-Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
-
-
-" paste at end of line with space
-"nnoremap P A <esc>p
 
 " center after G
 nnoremap G Gzz
