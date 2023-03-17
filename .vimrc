@@ -69,6 +69,7 @@ endif
 " custom keybinds & editor behaviour
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmenu
+set wildignorecase
 set wildmode=longest:full,full
 
 " Fix for bug causing vim to enter into replace mode on startup
@@ -115,7 +116,8 @@ map åå <C-W><C-W>
 map ö :bprevious<CR>
 map ä :bnext<CR>
 " map Å :buffers<CR>
-map Å :buffers<CR>:buffer<Space>
+" map Å :buffers<CR>:buffer<Space>
+map Å :tselect 
 nnoremap Q :bp\|bd #<CR>
 
 " remap FZF plugin shortcut
