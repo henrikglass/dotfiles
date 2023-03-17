@@ -116,8 +116,8 @@ map åå <C-W><C-W>
 map ö :bprevious<CR>
 map ä :bnext<CR>
 " map Å :buffers<CR>
-" map Å :buffers<CR>:buffer<Space>
-map Å :tselect 
+map Å :buffers<CR>:buffer<Space>
+map ¨¨ :tselect 
 nnoremap Q :bp\|bd #<CR>
 
 " remap FZF plugin shortcut
