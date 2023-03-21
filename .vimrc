@@ -200,6 +200,12 @@ vnoremap k j
 
 command! W :w
 
+" indent key behavior
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 " folding
 set foldmethod=indent
 set foldlevel=99
