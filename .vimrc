@@ -90,20 +90,12 @@ xnoremap p "_dP
 " leader
 let mapleader='\'
 
-" ctrl space to autocomplete
-" inoremap <C-Space> asd
-
-nnoremap <Leader><Leader> zz
-
-" remap so C-d goes down half a page while C-e goes up half a page
-"nnoremap <C-e> <C-u>
-
 " go to definition (ctags) and center
-nnoremap <C-f> g<C-]>zz
+nnoremap <C-f> g<C-]>
 
 " center cursor when jumping forwards or backwards in jumplist
-nnoremap <C-o> <C-o>zz
-nnoremap <C-i> <C-i>zz
+nnoremap <C-o> <C-o>
+nnoremap <C-i> <C-i>
 
 " Don't move to next occurance with *
 nnoremap * *N
@@ -115,7 +107,6 @@ nnoremap <C-d> *Ncgn
 map åå <C-W><C-W>
 map ö :bprevious<CR>
 map ä :bnext<CR>
-" map Å :buffers<CR>
 map Å :buffers<CR>:buffer<Space>
 map ¨¨ :tselect 
 nnoremap Q :bp\|bd #<CR>
@@ -192,9 +183,6 @@ vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 vnoremap <expr> <C-Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
 vnoremap <expr> <C-Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 
-" center after G
-nnoremap G Gzz
-
 nnoremap k j
 vnoremap k j
 
@@ -239,6 +227,7 @@ nnoremap <F2> :/\s\+$<CR>
 nnoremap ,c   :-1read $HOME/.vim/templates/template.c
 nnoremap ,cpp :-1read $HOME/.vim/templates/template.cpp
 nnoremap ,h   :-1read $HOME/.vim/templates/template.h
+nnoremap ,hpp :-1read $HOME/.vim/templates/template.hpp
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
