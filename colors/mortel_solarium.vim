@@ -20,7 +20,6 @@ hi TabLineFill guifg=#c9c6c9 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ct
 hi TabLine guifg=#c9c6c9 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 hi TabLineSel guifg=#1e1e1e guibg=#d5d5d5 guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
 hi ColorColumn guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
-hi StatusLine guifg=#1e1e1e guibg=#d0c0a0 guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
 hi VertSplit guifg=#1e1e1e guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
 
 hi Directory guifg=#d0c0a0 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
@@ -59,11 +58,13 @@ hi Repeat guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE ct
 
 hi IncSearch guifg=#1e1e1e guibg=#ff4349 guisp=#ff4349 gui=NONE ctermfg=235 ctermbg=1 cterm=NONE
 hi WildMenu guifg=NONE guibg=#ff4349 guisp=#ff4349 gui=NONE ctermfg=NONE ctermbg=248 cterm=NONE
-hi SignColumn guifg=#1e1e1e guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
 hi Title guifg=#F9F9FF guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=189 ctermbg=235 cterm=NONE
 hi Folded guifg=#505050 guibg=#1e1e1e guisp=#1e1e1e gui=italic ctermfg=235 ctermbg=248 cterm=NONE
 " hi TabLineSel guifg=#1e1e1e guibg=#ff4349 guisp=#ff4349 gui=NONE ctermfg=235 ctermbg=1 cterm=NONE
+hi StatusLine guifg=#1e1e1e guibg=#d0c0a0 guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
 hi StatusLineNC guifg=#d5d5d5 guibg=#1e1e1e guisp=#5E6C70 gui=NONE ctermfg=235 ctermbg=66 cterm=NONE
+hi StatusLineTerm guifg=#1e1e1e guibg=#d0c0a0 guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
+hi StatusLineTermNC guifg=#d5d5d5 guibg=#492929 guisp=#5E6C70 gui=NONE ctermfg=235 ctermbg=66 cterm=NONE
 hi NonText guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=66 ctermbg=NONE cterm=NONE
 hi DiffText guifg=NONE guibg=#492224 guisp=#492224 gui=NONE ctermfg=NONE ctermbg=52 cterm=NONE
 hi ErrorMsg guifg=#80f0e0 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
@@ -107,3 +108,12 @@ hi Underlined guifg=#F9F9FF guibg=#1e1e1e guisp=#1e1e1e gui=underline ctermfg=18
 hi DiffAdd guifg=NONE guibg=#193224 guisp=#193224 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 " hi TabLine guifg=#1e1e1e guibg=#5E6C70 guisp=#5E6C70 gui=NONE ctermfg=235 ctermbg=66 cterm=NONE
 hi cursorim guifg=#1e1e1e guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
+
+" Termdebug
+hi debugBreakpoint guifg=#f0e0c0 guibg=#693939 guisp=#F9F9FF gui=NONE ctermfg=235 ctermbg=189 cterm=NONE
+hi debugPC guifg=#f0e0c0 guibg=#ff4349 guisp=#F9F9FF gui=NONE ctermfg=235 ctermbg=189 cterm=NONE
+hi debugPC guifg=NONE guibg=#693939 guisp=#292929 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
+"hi debugPC guifg=#1e1e1e guibg=#d0c0a0 guisp=#292929 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
+"hi debugPC guifg=#1e1e1e guibg=#a09080 guisp=#292929 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
+"hi debugPC guifg=#1e1e1e guibg=#FF4349 guisp=#292929 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
+hi SignColumn guifg=#F9F9FF guibg=#1e1e1e guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
