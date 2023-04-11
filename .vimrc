@@ -246,10 +246,13 @@ let g:netrw_liststyle = 0
 set omnifunc=syntaxcomplete#Complete
 set completeopt-=preview
 setglobal complete-=i
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Termdebug/gdb stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 packadd termdebug
 let g:termdebug_wide=1
 nnoremap <F6> :Termdebug<CR><C-w>l:vertical resize +20<CR>:resize +30<CR>
+tnoremap <Esc><Esc> <C-\><C-n>
+nnoremap <space><space> :Break<CR>
+nnoremap -- :Clear<CR>
+
