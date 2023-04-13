@@ -212,6 +212,7 @@ set hidden
 
 " automatically reload/refresh files when they are changed
 set autoread
+au CursorHold * checktime
 
 " wildfire (generic select inside) objects
 let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
