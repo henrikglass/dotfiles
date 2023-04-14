@@ -233,7 +233,7 @@ nnoremap ,hpp :-1read $HOME/.vim/templates/template.hpp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:netrw_sort_sequence = ''
+let g:netrw_sort_sequence = '[\/]$,*'
 let g:netrw_fastbrowse = 0
 let g:netrw_banner = 0
 let g:netrw_liststyle = 0
@@ -253,7 +253,6 @@ setglobal complete-=i
 packadd termdebug
 let g:termdebug_wide=1
 nnoremap <F6> :Termdebug<CR><C-w>l:vertical resize +20<CR>:resize +30<CR>
-tnoremap <Esc><Esc> <C-\><C-n>
-nnoremap <space><space> :Break<CR>
+nnoremap ++ :Break<CR>
 nnoremap -- :Clear<CR>
 
