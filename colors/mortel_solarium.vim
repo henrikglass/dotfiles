@@ -22,7 +22,7 @@ hi TabLineSel guifg=#1e1e1e guibg=#d5d5d5 guisp=#1e1e1e gui=NONE ctermfg=251 cte
 hi ColorColumn guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 hi VertSplit guifg=#1e1e1e guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
 
-hi Directory guifg=#d0c0a0 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
+hi Directory guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 hi String guifg=#ce9178 guibg=NONE guisp=NONE gui=NONE ctermfg=144 ctermbg=NONE cterm=NONE
 hi Character guifg=#b0f0e0 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 hi Float guifg=#b0f0e0 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
