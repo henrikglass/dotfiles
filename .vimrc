@@ -194,6 +194,10 @@ nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" move visual selection
+vnoremap <C-Up>   :m '<-2<CR>gv=gv
+vnoremap <C-Down> :m '>+1<CR>gv=gv
+
 " folding
 set foldmethod=indent
 set foldlevel=99
