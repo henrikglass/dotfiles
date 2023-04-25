@@ -51,7 +51,7 @@ hi Type guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cte
 hi Tag guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Structure guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 hi Macro guifg=#d75f5f guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
-hi MatchParen guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
+hi MatchParen guifg=#d75f5f guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Repeat guifg=#d5d5d5 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 "hi NERDTreeDir guifg=#d5d5d5 guibg=#1e1e1e gui=NONE
 
