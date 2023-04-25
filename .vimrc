@@ -16,7 +16,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'ap/vim-css-color'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/tagbar'
-Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/Align'
 
 " All of your Plugins must be added before the following line
 call plug#end()              " required
@@ -225,6 +225,9 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
 " highlight RedundantSpaces ctermbg=red guibg=red
 " match RedundantSpaces /\s\+$/
 nnoremap <F2> :/\s\+$<CR>
+
+"Align
+vnoremap a :Align
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
