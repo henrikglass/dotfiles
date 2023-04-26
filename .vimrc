@@ -82,11 +82,6 @@ set timeoutlen=1000 ttimeoutlen=0 " fix delay after esc
 "set colorcolumn=80 " set right margin marker
 set nowrap " disable line wrapping
 
-" remove yank on delete (working again)
-nnoremap d "_d
-xnoremap d "_d
-xnoremap p "_dP
-
 " leader
 let mapleader='\'
 
