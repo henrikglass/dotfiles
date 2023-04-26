@@ -16,7 +16,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'ap/vim-css-color'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/tagbar'
-Plug 'vim-scripts/Align'
+Plug 'godlygeek/tabular'
 
 " All of your Plugins must be added before the following line
 call plug#end()              " required
@@ -226,8 +226,15 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
 " match RedundantSpaces /\s\+$/
 nnoremap <F2> :/\s\+$<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Visual mode tricks
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "Align
-vnoremap a :Align
+vnoremap A :Tabularize //<Left>
+vnoremap a :Tabularize /^[^]*\zs<Left><Left><Left><Left><Left>
+
+vnoremap S :s///g<Left><Left><Left>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
