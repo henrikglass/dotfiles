@@ -2,7 +2,7 @@
 " plugin stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
-filetype on                  " required
+filetype on                   " required
 
 " set the runtime path to include Vundle and initialize
 " set rtp+=~/.vim/bundle/Vundle.vim
@@ -13,10 +13,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'gcmt/wildfire.vim'
 Plug 'bkad/CamelCaseMotion'
-Plug 'ap/vim-css-color'
+"Plug 'ap/vim-css-color'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/tagbar'
 Plug 'godlygeek/tabular'
+Plug 'junegunn/goyo.vim'
+Plug 'mg979/vim-visual-multi'
 
 " All of your Plugins must be added before the following line
 call plug#end()              " required
@@ -82,7 +84,7 @@ set timeoutlen=1000 ttimeoutlen=0 " fix delay after esc
 "set colorcolumn=80 " set right margin marker
 set nowrap " disable line wrapping
 
-" leader
+" leader remap
 let mapleader='\'
 
 " go to definition (ctags) and center
@@ -96,14 +98,20 @@ nnoremap <C-i> <C-i>
 nnoremap * *N
 
 " visual studio style 'next occurance' selection
-nnoremap <C-d> *Ncgn
+" nnoremap <C-d> *Ncgn
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-d>'
+let g:VM_maps['Find Subword Under'] = '<C-d>'
 
 " remap tab switching, buffer switching and split focus
-map åå <C-W><C-W>
+map  <C-å><C-å> <C-W><C-W>
+xmap <C-å><C-å> <C-W><C-W>
+tmap <C-å><C-å> <C-W><C-W>
 map ö :bprevious<CR>
 map ä :bnext<CR>
+" map Å :buffers<CR>
 map Å :buffers<CR>:buffer<Space>
-map ¨¨ :tselect 
+map ¨¨ :tjump
 nnoremap Q :bp\|bd #<CR>
 
 " remap FZF plugin shortcut
@@ -240,8 +248,30 @@ nnoremap ,h   :-1read $HOME/.vim/templates/template.h
 nnoremap ,hpp :-1read $HOME/.vim/templates/template.hpp
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Terminal mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap tt :tabnew<CR>:terminal ++curwin<CR>
+
+let g:terminal_ansi_colors = [
+  \'#282828', '#CC241D', '#98971A', '#D79921',
+  \'#458588', '#B16286', '#689D6A', '#D65D0E',
+  \'#fb4934', '#b8bb26', '#fabd2f', '#83a598',
+  \'#d3869b', '#8ec07c', '#fe8019', '#FBF1C7' ]
+
+highlight Terminal guibg='#282828'
+highlight Terminal guifg='#ebdbb2'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Goyo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:goyo_width  = 120
+let g:goyo_linenr = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:netrw_sort_sequence = ''
 let g:netrw_sort_sequence = '[\/]$,*'
 let g:netrw_fastbrowse = 0
 let g:netrw_banner = 0
@@ -256,6 +286,7 @@ let g:netrw_liststyle = 0
 set omnifunc=syntaxcomplete#Complete
 set completeopt-=preview
 setglobal complete-=i
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Termdebug/gdb stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -264,4 +295,3 @@ let g:termdebug_wide=1
 nnoremap <F6> :Termdebug<CR><C-w>l:vertical resize +20<CR>:resize +30<CR>
 nnoremap ++ :Break<CR>
 nnoremap -- :Clear<CR>
-
