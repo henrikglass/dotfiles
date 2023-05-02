@@ -104,6 +104,7 @@ let g:VM_maps['Find Under']         = '<C-d>'
 let g:VM_maps['Find Subword Under'] = '<C-d>'
 
 " remap tab switching, buffer switching and split focus
+map  åå <C-W><C-W>
 map  <C-å><C-å> <C-W><C-W>
 xmap <C-å><C-å> <C-W><C-W>
 tmap <C-å><C-å> <C-W><C-W>
@@ -235,7 +236,7 @@ nnoremap <F2> :/\s\+$<CR>
 
 "Align
 vnoremap A :Tabularize //<Left>
-vnoremap a :Tabularize /^[^]*\zs<Left><Left><Left><Left><Left>
+vnoremap a :Tabularize /.*/<Left><Left><Left>
 
 vnoremap S :s///g<Left><Left><Left>
 
@@ -251,14 +252,18 @@ nnoremap ,hpp :-1read $HOME/.vim/templates/template.hpp
 " Terminal mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap tt :tabnew<CR>:terminal ++curwin<CR>
+nnoremap <M-Left> gT
+nnoremap <M-Right> gt
+tnoremap <M-Left> <C-w>gT
+tnoremap <M-Right> <C-w>gt
 
 let g:terminal_ansi_colors = [
-  \'#282828', '#CC241D', '#98971A', '#D79921',
+  \'#1e1e1e', '#CC241D', '#98971A', '#D79921',
   \'#458588', '#B16286', '#689D6A', '#D65D0E',
   \'#fb4934', '#b8bb26', '#fabd2f', '#83a598',
   \'#d3869b', '#8ec07c', '#fe8019', '#FBF1C7' ]
 
-highlight Terminal guibg='#282828'
+highlight Terminal guibg='#1e1e1e'
 highlight Terminal guifg='#ebdbb2'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
