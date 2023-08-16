@@ -186,3 +186,6 @@ __prompt_command() {
         PS1+=" \w ${g}λ ${n}"
     fi
 }
+
+# Don't run command immediately after Ctrl-R search
+shopt -s histverify
