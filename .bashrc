@@ -187,5 +187,8 @@ __prompt_command() {
     fi
 }
 
-# Don't run command immediately after Ctrl-R search
 shopt -s histverify
+
+# fuzzy vim & fuzzy history
+alias fv='vim $(fzf)'
+alias fh='eval $(history | fzf | awk '\''{for (i=2; i<=NF; i++) print $i}'\'')'
