@@ -191,4 +191,10 @@ shopt -s histverify
 
 # fuzzy vim & fuzzy history
 alias fv='vim $(fzf)'
-alias fh='eval $(history | fzf | awk '\''{for (i=2; i<=NF; i++) print $i}'\'')'
+#alias fh='eval $(history | fzf | awk '\''{for (i=2; i<=NF; i++) print $i}'\'')'
+fh() {
+    CMD=$(eval 'history | fzf | awk '\''{for (i=2; i<=NF; i++) {printf "%s ", $i}}'\''')
+    read -p "Execute ´ $CMD ´ ? (Ctrl-C to abort)" -n 1 -r
+    eval $CMD
+}
+
