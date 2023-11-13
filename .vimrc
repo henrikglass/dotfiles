@@ -187,6 +187,9 @@ vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 vnoremap <expr> <C-Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
 vnoremap <expr> <C-Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 
+" change sub-word in snake_case
+nnoremap cs ct_
+
 nnoremap k j
 vnoremap k j
 
