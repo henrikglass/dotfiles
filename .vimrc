@@ -19,6 +19,7 @@ Plug 'preservim/tagbar'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'mg979/vim-visual-multi'
+Plug 'vim-utils/vim-man'
 
 " All of your Plugins must be added before the following line
 call plug#end()              " required
@@ -268,6 +269,11 @@ let g:terminal_ansi_colors = [
 
 highlight Terminal guibg='#1e1e1e'
 highlight Terminal guifg='#ebdbb2'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-man
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map mm <Plug>(Man)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Goyo
