@@ -13,13 +13,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'gcmt/wildfire.vim'
 Plug 'bkad/CamelCaseMotion'
-"Plug 'ap/vim-css-color'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'preservim/tagbar'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'mg979/vim-visual-multi'
-Plug 'vim-utils/vim-man'
 
 " All of your Plugins must be added before the following line
 call plug#end()              " required
@@ -169,7 +165,7 @@ function! Lb()
     "norm b
     exec "norm \<Plug>CamelCaseMotion_b"
     if line('.') != last
-        norm w
+        norm $w
     endif
 endfunction
 
@@ -271,9 +267,18 @@ highlight Terminal guibg='#1e1e1e'
 highlight Terminal guifg='#ebdbb2'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-man
+" C-programming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map mm <Plug>(Man)
+:command Make !make clean; make
+
+" open in man
+runtime ftplugin/man.vim
+map mm :Man <C-r><C-w><CR>
+
+" tag generation
+:command Ctags !ctags -R
+:autocmd BufWritePost *.cpp,*.hpp,*.c,*.h,*.adb,*.ads call
+    \system('test -f tags && ctags -R --_xformat="%-16N %-10K %4n %-16F %{typeref} %{name}%{signature}" --fields=+S --sort=yes')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Goyo
