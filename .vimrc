@@ -192,9 +192,11 @@ vnoremap k j
 
 command! W :w
 
-" move selection with ctrl + shift + up/down
+" move visueal selection/current row with ctrl + shift + up/down
 vnoremap <C-S-Up>   :m '<-2<CR>gv=gv
 vnoremap <C-S-Down> :m '>+1<CR>gv=gv
+nnoremap <C-S-Up>   :m -2<CR>
+nnoremap <C-S-Down> :m +1<CR>
 
 " indent key behavior
 nnoremap <Tab> >>_
