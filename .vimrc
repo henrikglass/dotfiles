@@ -192,6 +192,10 @@ vnoremap k j
 
 command! W :w
 
+" move selection with ctrl + shift + up/down
+vnoremap <C-S-Up>   :m '<-2<CR>gv=gv
+vnoremap <C-S-Down> :m '>+1<CR>gv=gv
+
 " indent key behavior
 nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
