@@ -308,6 +308,7 @@ function! NetrwMapping()
     nunmap <buffer> <Right>
     nunmap <buffer> <Left>
     nmap <buffer> <Right> <CR>
+    nmap <buffer> <Backspace> -^
     nmap <buffer> <Left> -^
 endfunction
 
