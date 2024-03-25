@@ -302,6 +302,20 @@ let g:netrw_fastbrowse = 0
 let g:netrw_banner = 0
 let g:netrw_liststyle = 0
 
+nnoremap <C-ö> :Explore<CR>
+
+function! NetrwMapping()
+    nunmap <buffer> <Right>
+    nunmap <buffer> <Left>
+    nmap <buffer> <Right> <CR>
+    nmap <buffer> <Left> -^
+endfunction
+
+augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
