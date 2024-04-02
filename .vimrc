@@ -26,7 +26,8 @@ filetype indent off
 " style
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color schemes
-colorscheme mortel_solarium
+"colorscheme mortel_solarium
+colorscheme mortel_terrarium
 
 set termguicolors   " enable true color (24 bit colors)
 set number          " line numbers
