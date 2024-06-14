@@ -17,14 +17,14 @@ hi Normal guifg=#d0c0a0 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg
 hi CursorLine guifg=NONE guibg=#292929 guisp=#292929 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 hi CursorLineNr guifg=#e1e1e1 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 hi LineNr guifg=#555555 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
-hi StatusLine guifg=#e1e1e1 guibg=#492929 guisp=#d0c0a0 gui=NONE ctermfg=251 ctermbg=235 cterm=BOLD
+hi StatusLine guifg=#1e1e1e guibg=#d0c0a0 guisp=#d0c0a0 gui=NONE ctermfg=251 ctermbg=235 cterm=BOLD
 hi StatusLineNC guifg=#909090 guibg=#292929 guisp=#5E6C70 gui=NONE ctermfg=235 ctermbg=66 cterm=NONE
 hi StatusLineTerm guifg=#e1e1e1 guibg=#492929 guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=BOLD
 hi StatusLineTermNC guifg=#909090 guibg=#292929 guisp=#5E6C70 gui=NONE ctermfg=235 ctermbg=66 cterm=NONE
 hi Comment guifg=#909090 guibg=NONE guisp=NONE gui=italic ctermfg=65 ctermbg=NONE cterm=NONE
 hi TabLineFill guifg=#c9c6c9 guibg=#292929 guisp=#292929 gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 hi TabLine guifg=#909090 guibg=#292929 guisp=#292929 gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
-hi TabLineSel guifg=#d5d5d5 guibg=#492929 guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
+hi TabLineSel guifg=#1e1e1e guibg=#d0c0a0 guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 hi ColorColumn guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=NONE
 hi VertSplit guifg=#1e1e1e guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
 hi Split guifg=#1e1e1e guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=251 ctermbg=235 cterm=bold
