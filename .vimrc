@@ -95,6 +95,11 @@ nnoremap <C-i> <C-i>
 " Don't move to next occurance with *
 nnoremap * *N
 
+" remove yank on delete (working again)
+nnoremap d "_d
+xnoremap d "_d
+xnoremap p "_dP
+
 " visual studio style 'next occurance' selection
 " nnoremap <C-d> *Ncgn
 let g:VM_maps = {}
