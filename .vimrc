@@ -220,6 +220,7 @@ set foldlevel=99
 
 " tab to autocomplete
 inoremap <expr> <Tab> getline('.')[col('.')-2] =~# '\S' ? '<C-n>' : '<Tab>'
+inoremap <expr> <C-Tab> getline('.')[col('.')-2] =~# '\S' ? '<C-x><C-o>' : '<Tab>'
 
 " tagbar toggle on enter
 nmap <F8> :TagbarOpenAutoClose<CR>
