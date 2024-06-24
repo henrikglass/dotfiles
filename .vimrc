@@ -332,6 +332,7 @@ augroup END
 
 set omnifunc=syntaxcomplete#Complete
 set completeopt-=preview
+set completeopt+=menuone,longest
 setglobal complete-=i
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
