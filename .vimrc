@@ -106,6 +106,9 @@ let g:VM_maps = {}
 let g:VM_maps['Find Under']         = '<C-d>'
 let g:VM_maps['Find Subword Under'] = '<C-d>'
 
+" search and replace what's under the cursor
+nnoremap ´´ yiw:%s/<C-r>"//g<left><left>
+
 " remap tab switching, buffer switching and split focus
 map  åå <C-W><C-W>
 map  <C-å><C-å> <C-W><C-W>
