@@ -263,6 +263,7 @@ nnoremap ,c   :-1read $HOME/.vim/templates/template.c
 nnoremap ,cpp :-1read $HOME/.vim/templates/template.cpp
 nnoremap ,h   :-1read $HOME/.vim/templates/template.h
 nnoremap ,hpp :-1read $HOME/.vim/templates/template.hpp
+nnoremap ,m   :-1read $HOME/.vim/templates/template.makefile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal mode
