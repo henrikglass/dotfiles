@@ -16,6 +16,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'mg979/vim-visual-multi'
+Plug 'vim-scripts/taglist.vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()              " required
@@ -116,16 +117,15 @@ xmap <C-å><C-å> <C-W><C-W>
 tmap <C-å><C-å> <C-W><C-W>
 map ö :bprevious<CR>
 map ä :bnext<CR>
-" map Å :buffers<CR>
-map Å :buffers<CR>:buffer<Space>
 map ¨¨ :tjump
 nnoremap Q :bp\|bd #<CR>
 
 " remap FZF plugin shortcut
 nnoremap Ö :FZF<CR>
-" nnoremap Ö :Explore<CR>
-"nnoremap Ä :TagbarToggle<CR>åå
+map Å :Buffers<CR>
 nnoremap Ä :Rg<CR>
+nnoremap _ :BTags<CR>
+nnoremap tt :TlistToggle<CR>
 
 " page keys to walk a 6th of a page
 function! ScrollChunk(move)
