@@ -13,10 +13,19 @@ Plug 'junegunn/fzf.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'gcmt/wildfire.vim'
 Plug 'bkad/CamelCaseMotion'
+"Plug 'ap/vim-css-color'
+"Plug 'ludovicchabant/vim-gutentags'
+Plug 'preservim/tagbar'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'mg979/vim-visual-multi'
+Plug 'dracula/vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-python/python-syntax'
+Plug 'Tetralux/odin.vim'
+Plug 'arthurxavierx/vim-unicoder'
 Plug 'vim-scripts/taglist.vim'
+"Plug 'vim-utils/vim-man'
 
 " All of your Plugins must be added before the following line
 call plug#end()              " required
@@ -27,8 +36,8 @@ filetype indent off
 " style
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color schemes
-"colorscheme mortel_solarium
-colorscheme mortel_terrarium
+colorscheme mortel_solarium
+"colorscheme mortel_terrarium
 
 set termguicolors   " enable true color (24 bit colors)
 set number          " line numbers
@@ -39,6 +48,8 @@ set hlsearch        " highlight search results
 nnoremap <C-l> <C-l>:nohlsearch<CR>
 
 set cursorline
+
+au BufReadPost *.ispc set syntax=c
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tabs
@@ -84,7 +95,7 @@ set timeoutlen=1000 ttimeoutlen=0 " fix delay after esc
 set nowrap " disable line wrapping
 
 " leader remap
-let mapleader='\'
+let mapleader=','
 
 " go to definition (ctags) and center
 nnoremap <C-f> g<C-]>
@@ -97,9 +108,9 @@ nnoremap <C-i> <C-i>
 nnoremap * *N
 
 " remove yank on delete (working again)
-nnoremap d "_d
-xnoremap d "_d
-xnoremap p "_dP
+"nnoremap d "_d
+"xnoremap d "_d
+"xnoremap p "_dP
 
 " visual studio style 'next occurance' selection
 " nnoremap <C-d> *Ncgn
@@ -117,6 +128,8 @@ xmap <C-å><C-å> <C-W><C-W>
 tmap <C-å><C-å> <C-W><C-W>
 map ö :bprevious<CR>
 map ä :bnext<CR>
+" map Å :buffers<CR>
+" map Å :buffers<CR>:buffer<Space>
 map ¨¨ :tjump
 nnoremap Q :bp\|bd #<CR>
 
@@ -183,7 +196,11 @@ nnoremap h j
 nnoremap <silent> <Right> :call Rw()<CR>
 nnoremap <silent> <Left> :call Lb()<CR>
 nnoremap <silent> <C-Right> :call Re()<CR>
-nnoremap <silent> <C-Left> :call Re()<CR>
+nnoremap <silent> <C-Left> :call Lb()<CR>
+"nnoremap <expr> <Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
+"nnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
+"nnoremap <expr> <C-Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
+"nnoremap <expr> <C-Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 "nnoremap <expr> <Right> col('.') == (col('$') - 1) \|\| getline('.')[col('.')-1:] =~# '^\S\+$' ? '$' : 'w'
 "nnoremap <expr> <Right> col('.') == (col('$') - 1) \|\| getline('.')[col('.')-1:] =~# '^[^[:keyword:]]\+$\\|^\k\+$' ? '$' : 'w'
 vnoremap j h
@@ -193,7 +210,6 @@ vnoremap <expr> <Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 vnoremap <expr> <C-Right> getline('.')[col('.') :] =~# '\s\S' ? 'e' : '$'
 vnoremap <expr> <C-Left> getline('.')[:col('.') + 1] =~# '\S\s' ? 'b' : '^'
 
-" change sub-word in snake_case
 nnoremap cs ct_
 
 nnoremap k j
@@ -201,7 +217,10 @@ vnoremap k j
 
 command! W :w
 
-" move visueal selection/current row with ctrl + shift + up/down
+inoremap § <esc>
+vnoremap § <esc>
+
+" move selection with ctrl + shift + up/down
 vnoremap <C-S-Up>   :m '<-2<CR>gv=gv
 vnoremap <C-S-Down> :m '>+1<CR>gv=gv
 nnoremap <C-S-Up>   :m -2<CR>
@@ -223,7 +242,7 @@ set foldlevel=99
 
 " tab to autocomplete
 inoremap <expr> <Tab> getline('.')[col('.')-2] =~# '\S' ? '<C-n>' : '<Tab>'
-inoremap <expr> <C-Tab> getline('.')[col('.')-2] =~# '\S' ? '<C-x><C-o>' : '<Tab>'
+inoremap <expr> <C-Tab> getline('.')[col('.')-2] =~# '\S' ? '<C-x><C-o>' : ''
 
 " tagbar toggle on enter
 nmap <F8> :TagbarOpenAutoClose<CR>
@@ -246,6 +265,8 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "i>", "ip", "it"]
 " match RedundantSpaces /\s\+$/
 nnoremap <F2> :/\s\+$<CR>
 
+nnoremap <space><space> zz
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode tricks
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -259,20 +280,24 @@ vnoremap S :s///g<Left><Left><Left>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap ,c   :-1read $HOME/.vim/templates/template.c
-nnoremap ,cpp :-1read $HOME/.vim/templates/template.cpp
-nnoremap ,h   :-1read $HOME/.vim/templates/template.h
-nnoremap ,hpp :-1read $HOME/.vim/templates/template.hpp
-nnoremap ,m   :-1read $HOME/.vim/templates/template.makefile
+nnoremap ,c     :-1read $HOME/.vim/templates/template.c
+nnoremap ,cpp   :-1read $HOME/.vim/templates/template.cpp
+nnoremap ,h     :-1read $HOME/.vim/templates/template.h
+nnoremap ,hpp   :-1read $HOME/.vim/templates/template.hpp
+nnoremap ,m     :-1read $HOME/.vim/templates/template.makefile
+nnoremap ,todo  :read !date +"@Henrik TODO \%Y-\%m-\%d \%H:\%M:\%S:"<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap tt :tabnew<CR>:terminal ++curwin<CR>
+"nnoremap tt :tabnew<CR>:terminal ++curwin<CR>
+"nnoremap ! :shell<CR>
+nnoremap ! :tabnew<CR>:terminal ++curwin ++kill=term<CR>
 nnoremap <M-Left> gT
 nnoremap <M-Right> gt
 tnoremap <M-Left> <C-w>gT
 tnoremap <M-Right> <C-w>gt
+"tnoremap <C-v><Esc> <Esc>
 
 let g:terminal_ansi_colors = [
   \'#1e1e1e', '#CC241D', '#98971A', '#D79921',
@@ -290,7 +315,7 @@ highlight Terminal guifg='#ebdbb2'
 
 " open in man
 runtime ftplugin/man.vim
-map mm :Man <C-r><C-w><CR>
+map MM :Man <C-r><C-w><CR>
 
 " tag generation
 :command Ctags !ctags -R
@@ -328,6 +353,7 @@ augroup netrw_mapping
     autocmd filetype netrw call NetrwMapping()
 augroup END
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -336,7 +362,6 @@ augroup END
 
 set omnifunc=syntaxcomplete#Complete
 set completeopt-=preview
-set completeopt+=menuone
 setglobal complete-=i
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -347,3 +372,7 @@ let g:termdebug_wide=1
 nnoremap <F6> :Termdebug<CR><C-w>l:vertical resize +20<CR>:resize +30<CR>
 nnoremap ++ :Break<CR>
 nnoremap -- :Clear<CR>
+
+let g:python_highlight_all = 1
+
+let g:c_no_curly_error = 1
