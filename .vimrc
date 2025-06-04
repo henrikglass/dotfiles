@@ -36,8 +36,8 @@ filetype indent off
 " style
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color schemes
-colorscheme mortel_solarium
-"colorscheme mortel_terrarium
+"colorscheme mortel_solarium
+colorscheme mortel_terrarium
 
 set termguicolors   " enable true color (24 bit colors)
 set number          " line numbers
@@ -87,7 +87,7 @@ set wildmode=longest:full,full
 " Fix for bug causing vim to enter into replace mode on startup
 set t_u7=
 
-set ttymouse=xterm2
+"set ttymouse=xterm2
 set mouse=a
 
 set timeoutlen=1000 ttimeoutlen=0 " fix delay after esc
