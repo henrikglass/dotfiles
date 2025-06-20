@@ -1,0 +1,6 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap u\nunmap o\nunmap e\nunmap d\nmap u scrollPageUp\nmap o scrollPageDown\nmap e scrollPageUp\nunmap S\nunmap D\nmap S goBack\nmap D goForward\nmap d scrollPageDown",
+  "scrollStepSize": 100,
+  "smoothScroll": false,
+  "settingsVersion": "2.2.1"
+}
