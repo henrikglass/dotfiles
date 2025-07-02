@@ -181,7 +181,7 @@ __prompt_command() {
     PS1="[\u@${g}\h${n}]"
 
     if [ $EXIT != 0 ]; then
-        PS1+=" \w ${r}λ ${n}"
+        PS1+=" \w ${r}[${EXIT}] λ ${n}"
     else
         PS1+=" \w ${g}λ ${n}"
     fi
