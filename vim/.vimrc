@@ -50,6 +50,10 @@ nnoremap <C-l> <C-l>:nohlsearch<CR>
 set cursorline
 
 au BufReadPost *.ispc set syntax=c
+au BufReadPost *.c set syntax=own_c
+au BufReadPost *.h set syntax=own_c
+au BufReadPost *.cpp set syntax=own_c
+au BufReadPost *.hpp set syntax=own_c
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tabs
@@ -319,8 +323,7 @@ map MM :Man <C-r><C-w><CR>
 
 " tag generation
 :command Ctags !ctags -R
-:autocmd BufWritePost *.cpp,*.hpp,*.c,*.h,*.adb,*.ads call
-    \system('test -f tags && ctags -R --_xformat="%-16N %-10K %4n %-16F %{typeref} %{name}%{signature}" --fields=+S --sort=yes')
+:autocmd BufWritePost *.cpp,*.hpp,*.c,*.h,*.adb,*.ads call system('test -f tags && ctags -R --_xformat="%-16N %-10K %4n %-16F %{typeref} %{name}%{signature}" --fields=+S --sort=yes')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Goyo
