@@ -54,6 +54,11 @@ au BufReadPost *.c set syntax=own_c
 au BufReadPost *.h set syntax=own_c
 au BufReadPost *.cpp set syntax=own_c
 au BufReadPost *.hpp set syntax=own_c
+au BufWinEnter *.ispc set syntax=c
+au BufWinEnter *.c set syntax=own_c
+au BufWinEnter *.h set syntax=own_c
+au BufWinEnter *.cpp set syntax=own_c
+au BufWinEnter *.hpp set syntax=own_c
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tabs
