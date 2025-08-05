@@ -284,6 +284,11 @@ if exists("c_gnu")
 endif
 syn keyword	cType		int long short char void
 syn keyword	cType		signed unsigned float double
+syn keyword	cType		uint
+syn keyword	cType		b8
+syn keyword	cType		i8 i16 i32 i64
+syn keyword	cType		u8 u16 u32 u64
+syn keyword	cType		bf16 f16 f32 f64
 if !exists("c_no_ansi") || exists("c_ansi_typedefs")
   syn keyword   cType		size_t ssize_t off_t wchar_t ptrdiff_t sig_atomic_t fpos_t
   syn keyword   cType		clock_t time_t va_list jmp_buf FILE DIR div_t ldiv_t
@@ -291,10 +296,6 @@ if !exists("c_no_ansi") || exists("c_ansi_typedefs")
 endif
 if !exists("c_no_c99") " ISO C99
   syn keyword	cType		_Bool bool _Complex complex _Imaginary imaginary
-  syn keyword	cType		b8
-  syn keyword	cType		i8 i16 i32 i64
-  syn keyword	cType		u8 u16 u32 u64
-  syn keyword	cType		bf16 f16 f32 f64
   syn keyword	cType		int8_t int16_t int32_t int64_t
   syn keyword	cType		uint8_t uint16_t uint32_t uint64_t
   if !exists("c_no_bsd")
