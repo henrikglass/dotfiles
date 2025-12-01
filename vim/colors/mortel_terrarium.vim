@@ -84,12 +84,13 @@ hi Search guifg=#1e1e1e guibg=#e04050 guisp=#e04050 gui=NONE ctermfg=235 ctermbg
 hi SpellRare guifg=#F9F9FF guibg=#1e1e1e guisp=#1e1e1e gui=underline ctermfg=189 ctermbg=235 cterm=underline
 
 " hi TabLineFill guifg=#1e1e1e guibg=#5E6C70 guisp=#5E6C70 gui=NONE ctermfg=235 ctermbg=66 cterm=NONE
-hi WarningMsg guifg=#80f0e0 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
-hi VisualNOS guifg=#1e1e1e guibg=#F9F9FF guisp=#F9F9FF gui=underline ctermfg=235 ctermbg=189 cterm=underline
-hi DiffDelete guifg=NONE guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
-hi ModeMsg guifg=#F9F9F9 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=15 ctermbg=235 cterm=NONE
-hi CursorColumn guifg=NONE guibg=#222E30 guisp=#222E30 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
-hi Define guifg=#e04050 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
+"hi WarningMsg guifg=#e09040 guibg=#1E1E1E guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE 
+hi WarningMsg guifg=#555555 guibg=#1E1E1E guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE 
+hi VisualNOS guifg=#1e1e1e guibg=#F9F9FF guisp=#F9F9FF gui=underline ctermfg=235 ctermbg=189 cterm=underline 
+hi DiffDelete guifg=NONE guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE 
+hi ModeMsg guifg=#F9F9F9 guibg=#1e1e1e guisp=#1e1e1e gui=NONE ctermfg=15 ctermbg=235 cterm=NONE 
+hi CursorColumn guifg=NONE guibg=#222E30 guisp=#222E30 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE 
+hi Define guifg=#e04050 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE 
 
 hi FoldColumn guifg=#1e1e1e guibg=#80f0e0 guisp=#80f0e0 gui=italic ctermfg=235 ctermbg=248 cterm=NONE
 hi Visual guifg=#f0e0c0 guibg=#e04050 guisp=#F9F9FF gui=NONE ctermfg=235 ctermbg=189 cterm=NONE
