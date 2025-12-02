@@ -117,6 +117,10 @@ nnoremap * *N
 "xnoremap d "_d
 "xnoremap p "_dP
 
+" Stamp
+nnoremap S diw"0P
+vnoremap S "0P
+
 " visual studio style 'next occurance' selection
 " nnoremap <C-d> *Ncgn
 let g:VM_maps = {}
