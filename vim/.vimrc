@@ -295,7 +295,8 @@ nnoremap ,h     :-1read $HOME/.vim/templates/template.h
 nnoremap ,hpp   :-1read $HOME/.vim/templates/template.hpp
 nnoremap ,m     :-1read $HOME/.vim/templates/template.makefile
 nnoremap ,m2    :-1read $HOME/.vim/templates/template2.makefile
-nnoremap ,todo  :read !date +"@Henrik TODO \%Y-\%m-\%d \%H:\%M:\%S:"<CR>
+nnoremap ,todo  :read !date +"TODO (Henrik A. Glass \%Y-\%m-\%d):"<CR>
+nnoremap ,note  :read !date +"Note (Henrik A. Glass \%Y-\%m-\%d):"<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal mode
