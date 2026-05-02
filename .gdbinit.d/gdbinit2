@@ -1,3 +1,6 @@
 set breakpoint pending on
 set disassembly-flavor intel
 set debuginfod enabled on
+directory /usr/src/glibc/glibc-2.36
+directory /usr/src/glibc/debian
+directory /usr/src/linux-source-6.1
